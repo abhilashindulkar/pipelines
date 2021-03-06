@@ -24,6 +24,7 @@ pipeline{
             success{
                 sh '''echo "moving war to s3"
                 aws s3 cp /var/lib/jenkins/workspace/JobPipeline/target/maven-web-application.war "s3://stark-jenkins/$JOB_NAME/$BUILD_NUMBER/"
+                echo War Link is https://stark-jenkins.s3.amazonaws.com/$JOB_NAME/$BUILD_NUMBER/maven-web-application.war
                 '''
             }
         
